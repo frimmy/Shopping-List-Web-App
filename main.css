@@ -70,19 +70,29 @@ div#content {
 	height: 800px;
 	width: 600px;
 	margin: 10px auto;
+	background-color: #ffffff;
+	opacity: .7;
+	border-radius: 10px;
+	display: block;
+
 }
 
 ul {
 	list-style: disc;
+	text-align: center;
+	margin: 10px auto;
 }
 
-h1 {
+li {
+	width: 100px;
+	padding: 10px;
+	margin: auto;
+}
+
+header {
+	position: relative;
+	display: block;
 	font: normal 40px/40px 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 	text-align: center;
-	-webkit-filter: blur(20px);
-	-moz-filter: blur(20px);
-	-o-filter: blur(20px);
-	-ms-filter: blur(20px);
-	filter: blur(20px);
-	opacity: 0.4;
+	margin: 10px auto;
 }
