@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 	<head>
+		<!--CDN linked: Bootsrap, Angular.JS/Firebase.JS etc-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.2/angular.min.js"></script>
+		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Grocering Store App</title>
+		
 		<!--local links-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+		<title>Grocering Store App</title>
 		<script type="text/javascript" src="application.js"></script>
-		<!--CDN linked: Bootsrap, Angular.JS/Firebase.JS etc-->
-		<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="main.css">
+		
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,14 +29,21 @@
 					<h1>Grocery List</h1>
 				</header>
 
-				<section id="main">
-					<ul>
-						<input type="text" placeholder="items">
-						<li>Thing 1</li>
-						<li>Thing 2</li>
-						<li>Thing 3</li>
-
+				<section id="main" ng-controller="TodoCtrl">
+					<span>{{remaining()}} of {{todos.length}} remaining</span>
+					[ <a href="" ng-click="archive()">archive</a>]
+					
+					<form ng-submit="addTodo()">
+					<input type="text" ng-model="todoText" size="30" placeholder="add new todo here">
+					<ul class="unstyled">
+						<li ng-repeat="todo in todos">
+							<input type="checkbox" ng-model="todo.done">
+							<span class="done-{{todo.done}}">{{todo.text}}</span>
+						</li>
 					</ul>
+					
+						<input class="btn-primary" type="submit" value="add">
+					</form>
 				</section>
 
 			</div>

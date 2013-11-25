@@ -48,3 +48,16 @@ header {
 input {
 	margin-bottom: 20px;
 }
+
+.done-true {
+	text-decoration: line-through;
+	color: grey;
+}
+
+form {
+	text-align: center;
+}
+
+.unstyled {
+	text-align: left;
+}
