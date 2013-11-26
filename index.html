@@ -9,7 +9,7 @@
 		
 		<!--local links-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Grocering Store App</title>
+		<title>Grocery Store App</title>
 		<script type="text/javascript" src="application.js"></script>
 		<link rel="stylesheet" type="text/css" href="main-min.css">
 		
@@ -37,6 +37,7 @@
 					<form ng-submit="addItem()">
 					<input type="text" ng-model="itemText" size="30" placeholder="add new item here" required>
 					<input class="btn-primary" type="submit" value="add">
+					<input class="btn-primary" id="slctAll" type="button" value="select all">
 					<ul class="unstyled">
 						<li ng-repeat="item in items">
 							<input type="checkbox" ng-model="item.done">

@@ -23,4 +23,12 @@ function ShopCtrl ($scope) {
 			if (!item.done) $scope.items.push(item);
 		});
 	};
+
+	$scope.selectAll = function() {
+		angular.forEach($scope.items, function(item) {
+			item.done = true;
+		});
+	};
+
+	document.getElementById('slctAll').onclick = $scope.selectAll();
 }
