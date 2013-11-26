@@ -1,26 +1,26 @@
-function TodoCtrl ($scope) {
-	$scope.todos = [
+function ShopCtrl ($scope) {
+	$scope.items = [
 		{text:'apples', done:true},
 		{text:'oranges', done:false}];
 
-	$scope.addTodo = function() {
-		$scope.todos.push({text:$scope.todoText, done:false});
-		$scope.todoText = '';
+	$scope.addItem = function() {
+		$scope.items.push({text:$scope.itemText, done:false});
+		$scope.itemText = '';
 	};
 
 	$scope.remaining = function() {
 		var count = 0;
-		angular.forEach($scope.todos, function(todo) {
-			count += todo.done ? 0:1;
+		angular.forEach($scope.items, function(item) {
+			count += item.done ? 0:1;
 		});
 		return count;
 	};
 
 	$scope.archive = function() {
-		var oldTodos = $scope.todos;
-		$scope.todos = [];
-		angular.forEach(oldTodos, function(todo) {
-			if (!todo.done) $scope.todos.push(todo);
+		var olditems = $scope.items;
+		$scope.items = [];
+		angular.forEach(olditems, function(item) {
+			if (!item.done) $scope.items.push(item);
 		});
 	};
 }
