@@ -25,10 +25,13 @@ function ShopCtrl ($scope) {
 	};
 
 	$scope.selectAll = function() {
-		angular.forEach($scope.items, function(item) {
-			item.done = true;
+		var allItems = $scope.items;
+		
+		angular.forEach(allItems, function(item) {
+			if (!item.done) item.done = true;
 		});
 	};
 
-	document.getElementById('slctAll').onclick = $scope.selectAll();
+	
+
 }
