@@ -32,6 +32,13 @@ function ShopCtrl ($scope) {
 		});
 	};
 
+	$scope.deselect = function() {
+		var allItems = $scope.items;
+
+		angular.forEach(allItems, function(item) {
+			if (item.done) item.done = false;
+		});
+	};
 	
 
 }

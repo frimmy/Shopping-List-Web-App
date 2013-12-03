@@ -37,6 +37,7 @@
 					<input type="text" ng-model="itemText" size="30" placeholder="add new item here" required>
 					<input class="btn btn-primary btn-sm" type="submit" value="add">
 					<input class="btn btn-primary btn-sm" id="slctAll" type="button" value="select all" ng-click="selectAll()">
+					<input class="btn btn-primary btn-sm" id="dslct" type="button" value="deselect all" ng-click="deselect()">
 					<ul class="unstyled">
 						<li ng-repeat="item in items">
 							<input type="checkbox" ng-model="item.done">
